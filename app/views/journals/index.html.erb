@@ -1,0 +1,23 @@
+<h1>Journals</h1>
+
+<%= link_to 'New journal', new_journal_path %>
+
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Text</th>
+    <th colspan="3"></th>
+  </tr>
+ 
+  <% @journals.each do |journal| %>
+    <tr>
+      <td><%= journal.date %></td>
+      <td><%= journal.text %></td>
+      <td><%= link_to 'Show', journal_path(journal) %></td>
+      <td><%= link_to 'Edit', edit_journal_path(journal) %></td>
+      <td><%= link_to 'Destroy', journal_path(journal), 
+                        method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
+

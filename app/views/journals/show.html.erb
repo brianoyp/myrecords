@@ -1,0 +1,23 @@
+<h3>
+    <strong>Date:</strong>
+    <string><%= @journal.date %></strong>
+</h3>
+
+<p>
+    <strong>Text:</strong>
+    <%= @journal.text %>
+</p>
+
+<br><br>
+
+<h4>Comments</h4>
+<%= render @journal.comments %>
+
+<br><br>
+
+<h4>Add a comment:</h4>
+<%= render "comments/form" %>
+
+<%= link_to 'Back', journals_path %>
+| <%= link_to 'Edit', edit_journal_path(@journal) %>
+

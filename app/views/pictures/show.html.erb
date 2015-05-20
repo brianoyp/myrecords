@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<h3>
+  <strong>Title:</strong>
+  <%= @picture.name %>
+</h3>
+
+<p>
+  <%= image_tag(@picture.picture_url, :width => 600) if @picture.picture.present? %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @picture.description %>
+</p>
+
+<%= link_to 'Edit', edit_picture_path(@picture) %> |
+<%= link_to 'Back', pictures_path %>
+
+<br><br>
+
+<h4>Comment:</h4>
+<%= render @picture.commentpics %>
+
+<br><br>
+
+<h4>Add a comment:</h4>
+<%= render "commentpics/form" %>
